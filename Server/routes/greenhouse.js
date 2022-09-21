@@ -13,8 +13,8 @@ router.get('/all', async(req,res)=>{
 
 router.get('/all/:id', async(req,res)=>{
     try{
-        const userID = req.params.id;
-        const greenhouse = await Greenhouse.find({owner:userID});
+        const userId = req.params.id;
+        const greenhouse = await Greenhouse.find({owner:userId});
         res.status(200).json(greenhouse);
     }catch(error){
         res.status(500).json(error);
